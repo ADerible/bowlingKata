@@ -1,9 +1,9 @@
-package Bowling.Exception;
+package bowling.exception;
 
 public class BowlingFrameException extends BowlingLineException{
 
     public BowlingFrameException() {
-        this( "Denominator cannot be zero" );
+        this( "A frame have a problem" );
     }
 
     public BowlingFrameException( String message ) {

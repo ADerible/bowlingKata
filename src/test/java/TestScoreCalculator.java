@@ -1,5 +1,5 @@
-import Bowling.Exception.BowlingLineException;
-import Bowling.ScoreCalculator.ScoreCalculator;
+import bowling.exception.BowlingLineException;
+import bowling.scoreCalculator.ScoreCalculator;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -67,6 +67,18 @@ public class TestScoreCalculator {
     }
 
     @Test(expected = BowlingLineException.class)
+    public void testKoEmptyLine() throws BowlingLineException {
+        String[] args = new String[]{};
+        ScoreCalculator.main(args);
+    }
+
+    @Test(expected = BowlingLineException.class)
+    public void testKoArrayWithNullString() throws BowlingLineException {
+        String[] args = new String[]{"45", "45", null, "45", "45", "45", "45", "45", "45", "45", "45" , "45" , "45" , "45" , "45"   };
+        ScoreCalculator.main(args);
+    }
+
+    @Test(expected = BowlingLineException.class)
     public void testKoTooManyFrames() throws BowlingLineException {
         String[] args = new String[]{"45", "45", "45", "45", "45", "45", "45", "45", "45", "45", "45" , "45" , "45" , "45" , "45"   };
         ScoreCalculator.main(args);
@@ -124,7 +136,7 @@ public class TestScoreCalculator {
 
     @Test(expected = BowlingLineException.class)
     public void testKoOtherChar() throws BowlingLineException{
-        String[] args = new String[]{"45", "%", "45", "45", "45", "45", "45", "45", "45", "45" };
+        String[] args = new String[]{"45", "%4", "45", "45", "45", "45", "45", "45", "45", "45" };
         ScoreCalculator.main(args);
     }
 

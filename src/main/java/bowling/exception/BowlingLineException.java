@@ -1,9 +1,9 @@
-package Bowling.Exception;
+package bowling.exception;
 
 public class BowlingLineException extends Exception{
 
     public BowlingLineException() {
-        this( "Denominator cannot be zero" );
+        this( "This line have a problem" );
     }
 
     public BowlingLineException( String message ) {
